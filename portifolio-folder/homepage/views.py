@@ -18,16 +18,16 @@ def layout (request):
         'name': 'Marina',
         'now': datetime.datetime.now(),
     }
-    return TemplateResponse(request, 'layout.html', context)
+    return TemplateResponse(request, 'pagetest/layout.html', context)
 
 def contact (request):
     context = {
         'page_title': 'Testing',
     }
-    return TemplateResponse(request, 'contact.html', context)
+    return TemplateResponse(request, 'pagetest/contact.html', context)
 
 def about (request):
     context = {
         'page_title': 'About page',
     }
-    return TemplateResponse(request, 'about.html', context)
+    return TemplateResponse(request, 'pagetest/about.html', context)
