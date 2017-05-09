@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'dev')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    
+
 ]
 
 
@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'portifolio.urls'
+ROOT_URLCONF = 'portfolio.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'portifolio.wsgi.application'
+WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 
 # Database
