@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^layout$', homepage.views.layout, name='layout'),
     url(r'^contact$', homepage.views.contact, name='contact'),
     url(r'^about$', homepage.views.about, name='about'),
+    url(r'^maripage$', homepage.views.maripage, name='maripage'),
 ]

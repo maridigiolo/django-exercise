@@ -31,3 +31,9 @@ def about (request):
         'page_title': 'About page',
     }
     return TemplateResponse(request, 'pagetest/about.html', context)
+
+def maripage (request):
+    context = {
+        'page_title': 'Marina Di Giolo - My profile page',
+    }
+    return TemplateResponse(request, 'personalpage/maripage.html', context)
