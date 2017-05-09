@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '104.238.147.114',
     'localhost',
+    #add the website that you want to add (git commit, git push, fab deploy)
 ]
 
 
