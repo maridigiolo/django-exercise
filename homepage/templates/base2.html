@@ -5,19 +5,14 @@
     <title>
       {%block title %} {{page_title}} {% endblock %}
     </title>
-    <link rel="stylesheet" href="{% static "main.css" %}" >
   </head>
 
   <body>
-    <div class="top">
-    <h1> Header </h1>
-  </div>
     {% block content %}
+
       This is where you add contents to your templates.
+
     {% endblock %}
-    <div class="foot">
-    <h2> Footer </h2>
-  </div>
   </body>
 
 </html>

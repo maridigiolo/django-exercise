@@ -25,4 +25,7 @@ urlpatterns = [
     url(r'^contact$', homepage.views.contact, name='contact'),
     url(r'^about$', homepage.views.about, name='about'),
     url(r'^maripage$', homepage.views.maripage, name='maripage'),
+    url(r'^hello$', homepage.views.hello, name='hello'),
+    url(r'^contact_me$', homepage.views.contact_me, name='contact_me'),
+    url(r'^thanks$', homepage.views.thanks, name='thanks'),
 ]

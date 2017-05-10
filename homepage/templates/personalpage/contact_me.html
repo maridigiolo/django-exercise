@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<form action = "/contact_me" method="POST">
+
+  {% csrf_token %}
+  <label> Name </label>
+  <br>
+  <input type="text" name="name" required>
+  <br><br>
+
+  <label> Email </label>
+  <br>
+  <input type="email" name="email" required>
+  <br><br>
+
+  <label> Describe your question </label>
+  <br>
+  <textarea name="question">
+
+  </textarea>
+  <br>
+
+  <input type="submit">
+</form>
+{% endblock %}

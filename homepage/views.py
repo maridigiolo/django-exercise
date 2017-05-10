@@ -1,7 +1,14 @@
 # Create your views here.
 
 from django.template.response import TemplateResponse
+from django import http
+from django.core.mail import send_mail
+
+
 import datetime
+
+from homepage.forms import NameForm
+from homepage.forms import ContactForm
 
 def homepage (request):
     context = {
@@ -37,3 +44,60 @@ def maripage (request):
         'page_title': 'Marina Di Giolo - My profile page',
     }
     return TemplateResponse(request, 'personalpage/maripage.html', context)
+
+
+def hello (request):
+    # print(request.GET)
+    # print(request.POST)
+    #
+    # context = {
+    #     'page_title': 'Marina Di Giolo - My profile page',
+    # }
+
+    # your_name = request.POST.get('your_name', 'Default name')
+    # context = {
+    #     'your_name': your_name
+    # }
+
+    form = NameForm(request.POST or None)
+
+    if request.method == "POST":
+        if form.is_valid():
+            print(form.cleaned_data['your_name'])
+            # send_email()
+            return http.HttpResponseRedirect('/thanks/')
+
+    context = {
+        'form': form
+    }
+
+    return TemplateResponse(request, 'hello.html', context)
+
+
+def contact_me (request):
+    form = ContactForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            print(form.cleaned_data['name'])
+            send_mail(
+                'Subject here',
+                'Here is the message.',
+                'from@example.com',
+                ['to@example.com'],
+                fail_silently=False,
+            )
+            return http.HttpResponseRedirect('/thanks')
+        else:
+            print(form.errors)
+    context = {
+        'form': form
+    }
+
+    return TemplateResponse(request, 'personalpage/contact_me.html', context)
+
+
+def thanks (request):
+    context = {
+        'page_title': 'Thank you',
+    }
+    return TemplateResponse(request, 'personalpage/thanks.html', context)
