@@ -79,9 +79,10 @@ def contact_me (request):
     if request.method == "POST":
         if form.is_valid():
             print(form.cleaned_data['name'])
+            print(form.cleaned_data['question'])
             send_mail(
                 'Subject here',
-                'Here is the message.',
+                'question',
                 'from@example.com',
                 ['to@example.com'],
                 fail_silently=False,
