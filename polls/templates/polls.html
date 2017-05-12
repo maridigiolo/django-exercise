@@ -2,11 +2,18 @@
 {% block content %}
 <ul>
   {% for poll in polls %}
+
   <li>
     <a href="./{{ poll.slug }}/answer/">
       {{ poll.question }}
-    </a>
+    </a>:
+    <ul>
+      {% for cat in poll.categories.all %}
+      <a href="?category={{ cat.slug }}"> <li> {{ cat.name }} </li> </a>
+      {% endfor %}
+    </ul>
   </li>
+  <hr>
   {% endfor %}
 </ul>
 {% endblock %}
