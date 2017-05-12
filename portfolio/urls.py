@@ -13,8 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
+
 
 import homepage.views
 import blog.views
@@ -33,4 +34,7 @@ urlpatterns = [
     #url for blogs
     url(r'^blog/(\S+)/(\S+)/$', blog.views.blog_post),
     url(r'^blog/(\S+)/$', blog.views.blog_index),
+
+    #url for polls
+    url(r'^polls/', include('polls.urls')),
 ]

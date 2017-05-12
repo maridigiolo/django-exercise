@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<ul>
+  {% for choice in choices %}
+  <li>
+    <a href="./vote/{{ choice.id }}/">
+      {{ choice.answer }} - {{ choice.votes }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
