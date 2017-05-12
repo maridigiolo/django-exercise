@@ -7,6 +7,10 @@ def blog_index (request, blog_slug):
     blog = get_object_or_404(Blog, slug=blog_slug)
     posts = Post.objects.filter(blog=blog)
     print(posts)
+
+    #to use the same view:
+    #use tags here
+    
     context = {
         'blog': blog,
         'posts': posts,
