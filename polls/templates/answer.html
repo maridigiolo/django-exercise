@@ -4,9 +4,11 @@
   {% for choice in choices %}
   <li>
     <a href="./vote/{{ choice.id }}/">
-      {{ choice.answer }} - {{ choice.votes }}
+      {{ choice.answer }} - {{ choice.votes }} vote{{choice.vote|pluralize }}
     </a>
   </li>
   {% endfor %}
 </ul>
+
+<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
 {% endblock %}

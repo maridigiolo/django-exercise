@@ -7,11 +7,13 @@
     <a href="./{{ poll.slug }}/answer/">
       {{ poll.question }}
     </a>:
+    {% if not selected_category %}
     <ul>
       {% for cat in poll.categories.all %}
       <a href="?category={{ cat.slug }}"> <li> {{ cat.name }} </li> </a>
       {% endfor %}
     </ul>
+    {% endif %}
   </li>
   <hr>
   {% endfor %}
